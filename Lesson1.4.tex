@@ -1,0 +1,123 @@
+% !TeX root = ТеорияОтображений.tex
+\section{Доказательства}
+Напоминание кванторов
+\begin{center}
+\begin{tabular}{l l}
+$\forall$ & -- для всякого\\
+$\exists$ & -- существует/найдется \\
+: & -- такой, что \\
+$:=$ & -- равенство по определению \\
+$\Rightarrow$ & -- следовательно (импликация)\\
+$\Leftrightarrow$ & -- равносильно/тогда и только тогда.
+\end{tabular}
+\end{center}
+Теперь займемся практикой доказательств и работы с определениями. Ниже приведены два относительно простых утверждений и их доказательства. Доказательства намеренно сделаны претенциозно и со всей строгостью, чтобы у читателя появлялось представление того как должно оформляться математическое доказательство на примере не сложных понятий. Но сначала дадим несколько определений.
+\begin{definition}\label{def:segment}
+Отрезком между числами $a$ и $b$, где $a,b\in \mathbb{R}$ и $a\leq b$ называется множество
+\[[a,b] := \{x\in \mathbb{R}\mid a\leq x\leq b\}\]
+\end{definition}
+\begin{definition}
+Множество $X\subset\mathbb{R}$ -- ограничено сверху, если
+\[\exists m_0\in\mathbb{R}:\forall a\in X\quad a\leq m_0\]
+ограничено снизу, если
+\[\exists m_1\in\mathbb{R}:\forall a\in X\quad m_1\leq a\]
+и просто ограничено, если 
+\[\exists m_2\in\mathbb{R}:\forall a\in X\quad |a|\leq m_2\]
+\end{definition}
+\begin{statement}
+отрезок -- ограниченное множество.
+\end{statement}
+\begin{proof}
+По определению отрезка \ref{def:segment}
+\[[a,b] := \{y\in \mathbb{R}\mid a\leq y\leq b\}\]
+А доказать необходимо ограниченность, то есть
+\[\exists s_0\in\mathbb{R}:\forall x\in [a,b]\quad |x|\leq s_0\]
+Для этого достаточно явно предоставить $s_0\in\mathbb{R}$ и показать почему оно подходит.\\
+Пусть \[s_0 =|a|+|b|\quad(\text{или }s_0 = \max\{|a|,|b|\})\]
+Теперь почему для этого $s_0$ выполнено условие ограниченности. Пусть $x_1\in[a,b]$, тогда
+\[x_1\in [a,b]\Rightarrow a\leq x_1\leq b\]
+Из свойств модуля получаем что
+\[b\leq|b|\leq|a|+|b|=s_0\Rightarrow b\leq s_0\]
+\[a\geq-|a|\geq-(|a|+|b|)=-s_0\Rightarrow a\geq -s_0\]
+Собираем все вместе
+\[-s_0\leq x_1\leq s_0\Rightarrow |x_1|\leq s_0\]
+Эти рассуждения справедливы для произвольного $x_1$, а значит все элементы отрезка ограничены числом $s_0$.
+\end{proof}
+\begin{statement}
+Множество $[0,1]\cap [2,3]$ -- пусто.
+\end{statement}
+\begin{proof}
+Пусть
+\[M=[0,1]\cap [2,3]:=\{x\mid x\in[0,1],x\in[2,3]\}\]
+Предположим противное, то есть $M\neq\varnothing$. Это значит что
+\[\exists x_0\in M\]
+Распишем продробнее
+\[x_0\in M\Rightarrow
+\begin{cases}
+x_0\in [0,1]\\
+x_0\in [2,3]
+\end{cases}
+\Rightarrow
+\begin{cases}
+0\leq x_0\leq 1\\
+2\leq x_0\leq 3
+\end{cases}
+\Rightarrow
+2\leq x_0\leq 1\\
+\]
+Это противоречие, значит $M$ -- пусто.
+\end{proof}
+
+\begin{statement}
+$A\cup B=\varnothing \Leftrightarrow 
+\left[
+\begin{gathered}
+A=\varnothing\\ 
+B=\varnothing
+\end{gathered}
+\right.$
+\end{statement}
+\begin{proof}
+При доказательстве 
+\end{proof}
+
+\begin{multicols}{2}
+\begin{exercise}
+\ \\
+\noindent\textbf{6.}
+Сформулируйте отрицание\\
+ограниченности.
+
+\bigskip\noindent\textbf{6.}
+Докажите утверждение 1.4.3.\\от противного.
+
+\bigskip\noindent\textbf{6.}
+Запишите отрицание\\
+\[\forall n\in\mathbb{N}\ \exists m\colon m = 2n\]
+\[\forall x\in\mathbb{Z}\ \exists y\in\mathbb{R}\colon y = \frac{1}{x}\]
+\[\exists a\colon\forall n\in\mathbb{N}\ \frac{1}{n}<a\]
+\[\exists M\colon\forall n\in\mathbb{N}\ n<M\]
+
+\bigskip\noindent\textbf{7.}
+Докажите или опровергните утверждения из предыдущего задания.
+
+\bigskip\noindent\textbf{8.}
+Докажите $A=B\Leftrightarrow (A\subset B\text{ и }B\subset A)$
+
+\noindent\textbf{1.}
+Пусть $A$ и $B$ -- множества. Докажите\\
+$A\times B=\varnothing \Leftrightarrow 
+\left[
+\begin{gathered}
+A=\varnothing\\ 
+B=\varnothing
+\end{gathered}
+\right.\\
+A\cap B=\varnothing \Leftrightarrow 
+\begin{cases}
+A=\varnothing\\ 
+B=\varnothing
+\end{cases}$
+
+\end{exercise}
+\end{multicols}

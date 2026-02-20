@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}[xscale=1.5, yscale=1.5]
+
+% --- 1. Настройки: множества и шаг сетки ---
+\def\A{{0},{1},{7}}       % элементы множества A (столбцы)
+\def\B{{g},{h}}            % элементы множества B (строки)
+\def\step{1}               % расстояние между точками
+
+% --- 2. Подписи столбцов (A) ---
+\foreach \val [count=\i] in \A {
+    \node[below] at (\i*\step,0) {\val};
+}
+
+% --- 3. Подписи строк (B) ---
+\foreach \val [count=\j] in \B {
+    \node[left] at (0,-\j*\step) {\val};
+}
+
+% --- 4. Отношение R (пары: столбец/строка по индексам) ---
+% Пример: {столбец/строка}, нумерация с 1
+\def\R{{1/1},{1/2},{2/2},{3/1}}  % соответствует: 0/g,0/h,1/h,7/g
+
+% --- 5. Автоматическая расстановка точек ---
+\foreach \pair in \R {
+    % Разделяем индекс столбца и строки
+    \pgfmathparse{\pair[0]} \let\ix=\pgfmathresult
+    \pgfmathparse{\pair[1]} \let\jy=\pgfmathresult
+    % Ставим точку
+    \fill (\ix*\step, -\jy*\step) circle (3pt);
+}
+
+% --- 6. (опционально) сетка ---
+\foreach \i in {1,...,3} {
+    \draw[gray!30] (\i*\step,-\step) -- (\i*\step,-2*\step);
+}
+\foreach \j in {1,...,2} {
+    \draw[gray!30] (\step,-\j*\step) -- (3*\step,-\j*\step);
+}
+
+\end{tikzpicture}
+
+\end{document}

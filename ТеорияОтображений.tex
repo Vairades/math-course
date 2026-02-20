@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt,openany]{book}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb, amsthm, mathtools, multicol}
+\usepackage{hyperref}
+\usepackage{tikz,pgfplots}
+\usepackage{venndiagram, wrapfig}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}[section]
+
+\theoremstyle{definition}
+\newtheorem{statement}[definition]{Утверждение}
+
+\theoremstyle{remark}
+\newenvironment{commentary}
+{\begin{quote}\itshape}
+{\end{quote}}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Примеры}
+
+\newtheorem{exercise}{Упражнения}[chapter]
+
+\frenchspacing
+\pagestyle{plain}
+
+\usepackage[dvipsnames]{xcolor}
+%RoyalBlue — для определений и операторов
+%ForestGreen — для ответов или утверждений
+%BrickRed — для важных замечаний
+%MidnightBlue — для теорем
+%Sepia — мягкий тёплый акцент
+%Purple — для вспомогательных обозначений
+\definecolor{phos}{RGB}{0,178,178}
+
+\title{Теория отображений для школьников}
+\author{Черногорцев Михаил}
+\date{11 февраля 2026 г.}
+
+\includeonly{Lesson1.4}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\include{Lesson1.1}
+\include{Lesson1.2}
+\include{Lesson1.3}
+\include{Lesson1.4}
+\include{Lesson1.5}
+\include{Lesson2.1}
+\end{document}
