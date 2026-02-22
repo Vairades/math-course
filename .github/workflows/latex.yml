@@ -1,31 +1,25 @@
 name: Build and publish PDF
 
 on:
-    push:
-          branches: [ main ]
+  push:
+    branches:
+      - main
 
-          jobs:
-              build:
-                    runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-                        steps:
-                          - name: Checkout
-                                    uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-                                        - name: Compile LaTeX
-                                              uses: xu-cheng/latex-action@v3
-                                                    with:
-                                                              root_file: ТеорияОтображений.tex
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ТеорияОтображений.tex
 
-                                                                  - name: Move PDF
-                                                                        run: |
-                                                                                  mkdir -p pdf
-                                                                                          mv ТеорияОтображений.pdf pdf/ТеорияОтображений.pdf
-
-                                                                                              - name: Co$it PDF
-                                                                                                    run: |
-                                                                                                              git config --global user.name "github-actions"
-                                                                                                                      git config --global user.email "actions@github.com"
-                                                                                                                              git add pdf/ТеорияОтображений.pdf
-                                                                                                                                      git co$it -m "update pdf" || echo "No changes"
-                                                                                                                                              git push$$
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: ТеорияОтображений.pdf
