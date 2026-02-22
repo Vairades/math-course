@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.11)  19 FEB 2026 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.11)  22 FEB 2026 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -609,46 +609,102 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \Gin@req@height=\dimen188
 \Gin@req@width=\dimen189
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 
 (E:\ForLaTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 
 (E:\ForLaTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 8--18
+Underfull \hbox (badness 10000) in paragraph at lines 12--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--106
 
  []
 
 [1
 
 {C:/Users/Михаил/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-(ЗадачиГлава1.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 109--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+[2] (ЗадачиГлава1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5683 strings out of 467870
- 84851 string characters out of 5434207
- 507639 words of memory out of 5000000
- 34504 multiletter control sequences out of 15000+600000
+ 5689 strings out of 467870
+ 85021 string characters out of 5434207
+ 515639 words of memory out of 5000000
+ 34510 multiletter control sequences out of 15000+600000
  635612 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,5n,70p,292b,197s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,13n,70p,292b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Михаил\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
 \larm1200.pk> <C:\Users\Михаил\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
 -t2a/dpi600\labx1200.pk> <C:\Users\Михаил\AppData\Local\MiKTeX\fonts/pk/l
 jfour/lh/lh-t2a/dpi600\labx1728.pk><E:/ForLaTeX/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb><E:/ForLaTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/ForLaTeX/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ЗадачиГлава1.pdf (1 page, 51286 bytes).
+cmex10.pfb><E:/ForLaTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><E:/ForLaTeX/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/ForLaTeX/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><E:/ForLaTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/ForLa
+TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ЗадачиГлава1.pdf (2 pages, 87558 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

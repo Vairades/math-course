@@ -8,12 +8,19 @@ $\exists$ & -- существует/найдется \\
 : & -- такой, что \\
 $:=$ & -- равенство по определению \\
 $\Rightarrow$ & -- следовательно (импликация)\\
-$\Leftrightarrow$ & -- равносильно/тогда и только тогда.
+$\iff$ & -- равносильно/тогда и только тогда.\\
+$\overset{\mathrm{def}}{\iff}$ & -- равносильно по определению.
 \end{tabular}
 \end{center}
-Теперь займемся практикой доказательств и работы с определениями. Ниже приведены два относительно простых утверждений и их доказательства. Доказательства намеренно сделаны претенциозно и со всей строгостью, чтобы у читателя появлялось представление того как должно оформляться математическое доказательство на примере не сложных понятий. Но сначала дадим несколько определений.
+Важнейшим умением в математических доказательств является формулирование отрицаний, т.е. утверждений, опровергающий изначальное. Это умение нарабатывается с опытом, поэтому приведем только общие соображения. Следующие закономерности не являются универсальными и каждое отрицание должно появляться из логических соображений.
+
+Если уверждение верно для всех объектов, то опровержением будет не выполнение даже для одного объекта. Напротив, если утверждение верно для какого-то объекта, то отрицанием будет не выполнение для всех объектов.
+
+Отдельно необходимо сказать про импликацию двух утверждений $P\Rightarrow Q$. Ее отрицанием будет выполнение $P$ и \textbf{не} выполнение $Q$, и никак иначе. Любая другая ситуация не будет опровергать $P\Rightarrow Q$.
+
+Теперь займемся практикой доказательств и работы с определениями. Ниже приведены несколько относительно простых утверждений и их доказательства. Доказательства намеренно сделаны претенциозно и со всей строгостью, чтобы у читателя появлялось представление того, как должно оформляться математическое доказательство. Но сначала дадим несколько определений.
 \begin{definition}\label{def:segment}
-Отрезком между числами $a$ и $b$, где $a,b\in \mathbb{R}$ и $a\leq b$ называется множество
+Отрезком между числами $a$ и $b$, где $a,b\in \mathbb{R}$ и $a\leq b$, называется множество
 \[[a,b] := \{x\in \mathbb{R}\mid a\leq x\leq b\}\]
 \end{definition}
 \begin{definition}
@@ -69,55 +76,115 @@ x_0\in [2,3]
 \end{proof}
 
 \begin{statement}
-$A\cup B=\varnothing \Leftrightarrow 
+$A\cup B=\varnothing \iff
+\begin{cases}
+A=\varnothing\\ 
+B=\varnothing
+\end{cases}$
+\end{statement}
+При доказательстве тождества двух утверждений $P\iff Q$, необходимо доказывать сразу две импликации: $P\Rightarrow Q$ и $P\Leftarrow Q$. Тут можно привести аналогию -- чтобы доказать равенство двух чисел $a=b$, мало доказать что $a\leq b$, необходимо доказывать и $a\geq b$.
+\begin{proof}
+Сначала докажем импликацию вправо ($\Rightarrow$), то есть докажем что
+\[A\cup B=\varnothing \Rightarrow
+\begin{cases}
+A=\varnothing\\ 
+B=\varnothing
+\end{cases}\]
+По определению $A\cup B := \{x\mid x\in A \text{ или } x\in B\}$. Докажем от противного, что, если $A\cup B=\varnothing$, то $A=\varnothing$ ($A\cup B=\varnothing\Rightarrow A=\varnothing$). Действительно, если $A\neq\varnothing$, то
+\[\exists x_0\in A \Rightarrow \exists x_0\in A\cup B\Rightarrow A\cup B\neq\varnothing\]
+Это противоречие, значит $A$ -- пусто. Аналогичные утверждения справедливы и для $B$, таким образом и $A$, и $B$ -- пусты. Импликация вправо доказана.
+
+Теперь импликация влево ($\Leftarrow$), а именно
+\[A\cup B=\varnothing \Leftarrow
+\begin{cases}
+A=\varnothing\\ 
+B=\varnothing
+\end{cases}\]
+По условию $A=\varnothing$ и $B=\varnothing$. Предположим что $A\cup B\neq\varnothing$, тогда
+\[\exists x_0\colon x_0\in A\cup B\Rightarrow x_0\in A\text{ или } x_0\in B\]
+Но и $A$, и $B$ -- пусты, а это противоречие. Таким образом утверждение доказано.
+\end{proof}
+Поговорим чуть больше про $\varnothing$. Почему мы решили что оно такое одно в природе, ведь почему нельзя сказать что пустота бывает разной? Для ответа на этот вопрос сначала нужно сказать что значит, что множества разные или одинаковы.
+\begin{definition}
+Множества $A$ и $B$ одинаковы (или равны), если
+\[\forall x\ (x\in A\iff x\in B) \overset{\mathrm{def}}{\iff} A=B\]
+Неформально можно сказать так, в $A$ и $B$ лежат одни и теже элементы.
+\end{definition}
+Теперь можно ответить на изначальный вопрос.
+
+\begin{statement}
+Пустое множество -- единственно.
+\end{statement}
+\begin{proof}
+Предположим противное. То есть нашлись два разных пустых множеств $\varnothing_1$ и $\varnothing_2$, причем $\varnothing_1\neq\varnothing_2$.
+Если оба этих множеств пусты, то по определению \ref{def:varnothing}
+\[\forall x\ (x\notin\varnothing_1)\text{ и }\forall y\ (y\notin\varnothing_2)\]
+\end{proof}
+
+\begin{statement}
+(Критерий равенства множеств)\\
+\[A=B\iff (A\setminus B)\cup(B\setminus A)=\varnothing\]
+\end{statement}
+\begin{proof}
+($\Rightarrow$)\\
+Положим $A=B$, тогда $A\setminus B=B\setminus A=\varnothing$, а по утверждению 1.4.5. мы знаем что $\varnothing\cup\varnothing=\varnothing$. Таким образом $(A\setminus B)\cup(B\setminus A)=\varnothing$.
+
+($\Leftarrow$)\\
+Положим $(A\setminus B)\cup(B\setminus A)=\varnothing$, тогда по утверждению 1.4.5. получаем что
+\[(A\setminus B)\cup(B\setminus A)=\varnothing
+\Rightarrow
+\begin{cases}
+(A\setminus B)=\varnothing\\
+(B\setminus A)=\varnothing
+\end{cases}\]
+Если $(A\setminus B)=\varnothing$, то 
+\end{proof}
+
+
+
+\begin{multicols}{2}
+\begin{exercise}
+\ \\
+\noindent\textbf{1.}
+Сформулируйте отрицание\\
+ограниченности.
+
+\medskip\noindent\textbf{2.}
+Докажите утверждение 1.4.3.\\от противного.
+
+\medskip\noindent\textbf{3.}
+Запишите отрицание\\
+\[\forall \varepsilon>0\ \exists N\in\mathbb{N}\colon \frac{1}{N}<\varepsilon\]
+\[\forall n\in\mathbb{N}\ \exists m\colon m = 2n\]
+\[\forall x\in\mathbb{Z}\ \exists y\in\mathbb{R}\colon y = \frac{1}{x}\]
+\[\exists a\colon\forall n\in\mathbb{N}\ \frac{1}{n}<a\]
+\[\exists M\colon\forall n\in\mathbb{N}\ n<M\]
+\columnbreak
+
+\medskip\noindent\textbf{4.}
+Докажите или опровергните утверждения из предыдущего задания.
+
+\medskip\noindent\textbf{5.}
+Докажите что $\{0,1\}\neq\{0,2\}$.
+
+\medskip\noindent\textbf{5.}
+Докажите $A=B\iff (A\subset B\text{ и }B\subset A)$.\\
+Проведите аналогию с\\ $a=b\iff (a\leq b\text{ и }a\geq b)$.
+
+\medskip\noindent\textbf{6.}
+Пусть $A$ и $B$ -- множества. Докажите\\
+$A\times B=\varnothing \iff
 \left[
 \begin{gathered}
 A=\varnothing\\ 
 B=\varnothing
 \end{gathered}
 \right.$
-\end{statement}
-\begin{proof}
-При доказательстве 
-\end{proof}
 
-\begin{multicols}{2}
-\begin{exercise}
-\ \\
-\noindent\textbf{6.}
-Сформулируйте отрицание\\
-ограниченности.
+\medskip\noindent\textbf{7.}
+Докажите что $[0,1]\subset[0,2]$.
 
-\bigskip\noindent\textbf{6.}
-Докажите утверждение 1.4.3.\\от противного.
-
-\bigskip\noindent\textbf{6.}
-Запишите отрицание\\
-\[\forall n\in\mathbb{N}\ \exists m\colon m = 2n\]
-\[\forall x\in\mathbb{Z}\ \exists y\in\mathbb{R}\colon y = \frac{1}{x}\]
-\[\exists a\colon\forall n\in\mathbb{N}\ \frac{1}{n}<a\]
-\[\exists M\colon\forall n\in\mathbb{N}\ n<M\]
-
-\bigskip\noindent\textbf{7.}
-Докажите или опровергните утверждения из предыдущего задания.
-
-\bigskip\noindent\textbf{8.}
-Докажите $A=B\Leftrightarrow (A\subset B\text{ и }B\subset A)$
-
-\noindent\textbf{1.}
-Пусть $A$ и $B$ -- множества. Докажите\\
-$A\times B=\varnothing \Leftrightarrow 
-\left[
-\begin{gathered}
-A=\varnothing\\ 
-B=\varnothing
-\end{gathered}
-\right.\\
-A\cap B=\varnothing \Leftrightarrow 
-\begin{cases}
-A=\varnothing\\ 
-B=\varnothing
-\end{cases}$
-
+\medskip\noindent\textbf{8.}
+Докажите что $\mathbb{N}\subset\mathbb{R}$ -- ограниченное множество.
 \end{exercise}
 \end{multicols}
