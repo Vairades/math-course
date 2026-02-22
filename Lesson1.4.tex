@@ -104,23 +104,13 @@ B=\varnothing
 \[\exists x_0\colon x_0\in A\cup B\Rightarrow x_0\in A\text{ или } x_0\in B\]
 Но и $A$, и $B$ -- пусты, а это противоречие. Таким образом утверждение доказано.
 \end{proof}
-Поговорим чуть больше про $\varnothing$. Почему мы решили что оно такое одно в природе, ведь почему нельзя сказать что пустота бывает разной? Для ответа на этот вопрос сначала нужно сказать что значит, что множества разные или одинаковы.
-\begin{definition}
+Поговорим про равенства множеств, множества равны, если равны их определения, формализуется это так:
+\begin{definition}\label{def:seteq}
 Множества $A$ и $B$ одинаковы (или равны), если
 \[\forall x\ (x\in A\iff x\in B) \overset{\mathrm{def}}{\iff} A=B\]
 Неформально можно сказать так, в $A$ и $B$ лежат одни и теже элементы.
 \end{definition}
-Теперь можно ответить на изначальный вопрос.
-
-\begin{statement}
-Пустое множество -- единственно.
-\end{statement}
-\begin{proof}
-Предположим противное. То есть нашлись два разных пустых множеств $\varnothing_1$ и $\varnothing_2$, причем $\varnothing_1\neq\varnothing_2$.
-Если оба этих множеств пусты, то по определению \ref{def:varnothing}
-\[\forall x\ (x\notin\varnothing_1)\text{ и }\forall y\ (y\notin\varnothing_2)\]
-\end{proof}
-
+На практиче часто встречается ситуация, что с определением неудобно работать. Для таких случаев доказываются утверждения, именуемые критериями, они эквивалентны нашему определению, но часто имеют более удобные формулировки.
 \begin{statement}
 (Критерий равенства множеств)\\
 \[A=B\iff (A\setminus B)\cup(B\setminus A)=\varnothing\]
@@ -134,14 +124,16 @@ B=\varnothing
 \[(A\setminus B)\cup(B\setminus A)=\varnothing
 \Rightarrow
 \begin{cases}
-(A\setminus B)=\varnothing\\
-(B\setminus A)=\varnothing
+A\setminus B=\varnothing\\
+B\setminus A=\varnothing
 \end{cases}\]
-Если $(A\setminus B)=\varnothing$, то 
+Если $(A\setminus B)=\varnothing$, то $\forall x\ (x\in A\Rightarrow x\in B)$, поскольку иначе вычитание будет не пусто. Аналогичные выводы делаются и из $B\setminus A=\varnothing$, а именно $\forall x\ (x\in B\Rightarrow x\in A)$. Совмещая эти два утверждения получаем тождество
+\[\begin{cases}
+\forall x\ (x\in A\Rightarrow x\in B)\\
+\forall x\ (x\in B\Rightarrow x\in A)
+\end{cases}\iff
+\forall x\ (x\in B\iff x\in A)\overset{\mathrm{def}}{\iff} A=B\]
 \end{proof}
-
-
-
 \begin{multicols}{2}
 \begin{exercise}
 \ \\
@@ -153,25 +145,27 @@ B=\varnothing
 Докажите утверждение 1.4.3.\\от противного.
 
 \medskip\noindent\textbf{3.}
-Запишите отрицание\\
-\[\forall \varepsilon>0\ \exists N\in\mathbb{N}\colon \frac{1}{N}<\varepsilon\]
-\[\forall n\in\mathbb{N}\ \exists m\colon m = 2n\]
-\[\forall x\in\mathbb{Z}\ \exists y\in\mathbb{R}\colon y = \frac{1}{x}\]
-\[\exists a\colon\forall n\in\mathbb{N}\ \frac{1}{n}<a\]
-\[\exists M\colon\forall n\in\mathbb{N}\ n<M\]
-\columnbreak
+Докажите что $[0,1]\subset[0,2]$.
 
 \medskip\noindent\textbf{4.}
+Запишите отрицание\\
+\[\forall \varepsilon>0\ \exists N\in\mathbb{N}\colon \frac{1}{N}<\varepsilon\]
+\[\forall x\in\mathbb{Z}\ \exists y\in\mathbb{R}\colon y = \frac{1}{x}\]
+\[\exists a\colon\forall n\in\mathbb{N}\ \frac{1}{n}<a\]
+\[\exists M\colon\forall n\in\mathbb{N}\ n<M.\]
+
+\medskip\noindent\textbf{5.}
 Докажите или опровергните утверждения из предыдущего задания.
 
-\medskip\noindent\textbf{5.}
-Докажите что $\{0,1\}\neq\{0,2\}$.
+\medskip\noindent\textbf{6.}
+Докажите из определения, что\\ $\{0,1\}\neq\{0,2\}$.
+Затем проверьте это\\ неравенство по критерию.
 
-\medskip\noindent\textbf{5.}
+\medskip\noindent\textbf{7.}
 Докажите $A=B\iff (A\subset B\text{ и }B\subset A)$.\\
 Проведите аналогию с\\ $a=b\iff (a\leq b\text{ и }a\geq b)$.
 
-\medskip\noindent\textbf{6.}
+\medskip\noindent\textbf{8.}
 Пусть $A$ и $B$ -- множества. Докажите\\
 $A\times B=\varnothing \iff
 \left[
@@ -181,10 +175,7 @@ B=\varnothing
 \end{gathered}
 \right.$
 
-\medskip\noindent\textbf{7.}
-Докажите что $[0,1]\subset[0,2]$.
-
-\medskip\noindent\textbf{8.}
+\medskip\noindent\textbf{9.}
 Докажите что $\mathbb{N}\subset\mathbb{R}$ -- ограниченное множество.
 \end{exercise}
 \end{multicols}
