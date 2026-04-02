@@ -1,4 +1,4 @@
-% !TeX root = ТеорияОтображений.tex
+% !TeX root = MappingTheory.tex
 \section{Доказательства}
 Напоминание кванторов
 \begin{center}
@@ -127,12 +127,13 @@ B=\varnothing
 A\setminus B=\varnothing\\
 B\setminus A=\varnothing
 \end{cases}\]
-Если $(A\setminus B)=\varnothing$, то $\forall x\ (x\in A\Rightarrow x\in B)$, поскольку иначе вычитание будет не пусто. Аналогичные выводы делаются и из $B\setminus A=\varnothing$, а именно $\forall x\ (x\in B\Rightarrow x\in A)$. Совмещая эти два утверждения получаем тождество
+Если $(A\setminus B)=\varnothing$, то $\forall x\ (x\in A\Rightarrow x\in B)$, поскольку иначе вычитание будет не пусто. Аналогичные выводы делаются и из $B\setminus A=\varnothing$, а именно $\forall x\ (x\in B\Rightarrow x\in A)$. Собираем все вместе и видим, что
 \[\begin{cases}
 \forall x\ (x\in A\Rightarrow x\in B)\\
 \forall x\ (x\in B\Rightarrow x\in A)
 \end{cases}\iff
 \forall x\ (x\in B\iff x\in A)\overset{\mathrm{def}}{\iff} A=B\]
+Два этих утверждения можно заменить тождеством, а это определение \ref{def:seteq}.
 \end{proof}
 \begin{multicols}{2}
 \begin{exercise}
