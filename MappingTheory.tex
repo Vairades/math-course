@@ -12,10 +12,13 @@
 
 
 \theoremstyle{definition}
-\newtheorem{definition}{Определение}[section]
+\newtheorem{definition}{Определение}[chapter]
 
 \theoremstyle{definition}
-\newtheorem{statement}[definition]{Утверждение}
+\newtheorem{statement}{Утверждение}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{axiom}{Аксиома}
 
 \theoremstyle{remark}
 \newenvironment{commentary}
@@ -25,7 +28,7 @@
 \theoremstyle{definition}
 \newtheorem*{example}{Примеры}
 
-\newtheorem{exercise}{Упражнения}[chapter]
+\newtheorem{exercise}{Упражнениe}[section]
 
 \frenchspacing
 \pagestyle{plain}
@@ -43,11 +46,13 @@
 \author{Черногорцев Михаил}
 \date{11 февраля 2026 г.}
 
-%\includeonly{Lesson2.1}
+% \includeonly{Lesson0.1}
 
 \begin{document}
 \maketitle
 \tableofcontents
+\include{Lesson0.1}
+\include{Lesson0.2}
 \include{Lesson1.1}
 \include{Lesson1.2}
 \include{Lesson1.3}

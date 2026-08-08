@@ -1,0 +1,24 @@
+% !TeX root = MappingTheory.tex
+
+\section{Отрицание}
+Для начала докажем полезное свойство отрицания
+\begin{statement}
+  Пусть $\mathcal{A}$ -- утверждение, и $\mathcal{B}$ -- отрицание $\mathcal{A}$. Тогда $ \forall \omega $ справедливо: \begin{enumerate}
+    \item Если $\mathcal{B}(\omega)$, то $ \omega $ ложна в $\mathcal{A}$.
+    \item Если $ \omega $ ложна в $\mathcal{B}$, то $\mathcal{A}(\omega)$.
+  \end{enumerate}
+\end{statement}
+\begin{proof} 1\\
+  Возьмем ситуацию $\sigma$ такую, что $\mathcal{B}(\sigma)$. Другие ситуации не касаются первого пункта.
+  Наша же задача показать, что если случилось что $ \mathcal{B} (\sigma) $, то $\sigma$ ложна в $\mathcal{A}$.
+
+  Рассмотрим худший для нас случай, то есть предположим что это не так, а именно $ \mathcal{A}(\sigma) $.
+  Тогда, по скольку $\mathcal{B}$ -- это отрицание $\mathcal{A}$, по определению отрицания мы знаем, что \[
+    \forall \omega \quad \text{ Если } \mathcal{A}(\omega) \text{, то } \omega \text{ ложна в } \neg\mathcal{A} \]
+  Отсюда понимаем что $\sigma$ ложна в $ \neg\mathcal{A} $, то есть в $\mathcal{B}$. Но ведь изначально мы брали $\sigma$ верную в $\mathcal{B}$.
+  То есть $\sigma$ и верна и ложна в $\mathcal{B}$, а это противоречит нашей аксиоме.
+  А значит наша $\sigma$ никак не может быть верной в $\mathcal{A}$, тем самым все доказано.
+\end{proof}
+\begin{exercise}
+  Докажите пункт 2.
+\end{exercise}
